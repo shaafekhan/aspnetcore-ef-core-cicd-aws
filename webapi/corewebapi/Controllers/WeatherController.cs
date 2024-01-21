@@ -19,7 +19,7 @@ namespace corewebapi.Controllers
         [HttpGet]
         public async Task<ActionResult<List<WeatherForecast>>> GetAll()
         {
-            var weather = _appDbContext.WeatherForecasts.ToListAsync();
+            var weather = await _appDbContext.WeatherForecasts.ToListAsync();
             return Ok(weather);
         }
     }
